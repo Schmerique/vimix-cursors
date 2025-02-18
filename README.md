@@ -1,6 +1,5 @@
-# Vimix cursors
-This is an x-cursor theme inspired by Materia design and
-based on [capitaine-cursors](https://github.com/keeferrourke/capitaine-cursors).
+# Vimix cursors (Hyprcursor)
+This is a Hyprcursor port of the Vimix cursors theme inspired by Materia design and based on [capitaine-cursors](https://github.com/keeferrourke/capitaine-cursors). (WIP)
 
 ## Installation
 To install the cursor theme simply copy the compiled theme to your icons
