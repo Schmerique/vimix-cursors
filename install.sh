@@ -19,8 +19,7 @@ if [ -d "$DEST_DIR/Vimix Hyprcursors - Light" ]; then
   rm -rf "$DEST_DIR/Vimix Hyprcursors - Light"
 fi
 
-cp -r "hyprcursor/theme_Vimix Hyprcursors - Dark/" "$DEST_DIR/Vimix Hyprcursors - Dark"
-cp -r "hyprcursor/theme_Vimix Hyprcursors - Light/" "$DEST_DIR/Vimix Hyprcursors - Light"
+cp -r "build/theme_Vimix Hyprcursors - Dark/" "$DEST_DIR/Vimix Hyprcursors - Dark"
+cp -r "build/theme_Vimix Hyprcursors - Light/" "$DEST_DIR/Vimix Hyprcursors - Light"
 
 echo "Finished..."
-

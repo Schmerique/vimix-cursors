@@ -5,7 +5,7 @@ import re
 import shutil
 import sys
 
-hyprcursors_path = "hyprcursor/dark/hyprcursors" if len(sys.argv) < 3 else sys.argv[2]
+hyprcursors_path = "build/dark/hyprcursors" if len(sys.argv) < 3 else sys.argv[2]
 svg_path = "src/svg" if len(sys.argv) < 2 else sys.argv[1]
 animation_fps = 60
 frame_delay = round(1000/animation_fps)

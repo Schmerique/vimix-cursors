@@ -1,6 +1,0 @@
-resize_algorithm = none
-hotspot_x = 0.67
-hotspot_y = 0.67
-define_override = xterm
-define_override = ibeam
-define_size = 48, text.svg, 17

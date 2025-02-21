@@ -1,5 +1,0 @@
-resize_algorithm = none
-hotspot_x = 0.67
-hotspot_y = 0.67
-define_override = split_v
-define_size = 48, row-resize.svg, 17
