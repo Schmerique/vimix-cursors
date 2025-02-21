@@ -28,8 +28,7 @@ run:
 ```
 ./build.sh
 ```
-
-The freshly compiled cursor theme will be located in `build/`
+The compiled cursor theme will be located in `build/`.
 When built from source, the install script can be used. For local installation:
 
 ```
