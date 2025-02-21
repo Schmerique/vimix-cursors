@@ -1,0 +1,4 @@
+resize_algorithm = none
+hotspot_x = 0.17
+hotspot_y = 0.67
+define_size = 48, left_side.svg, 17

@@ -1,0 +1,5 @@
+resize_algorithm = none
+hotspot_x = 0.17
+hotspot_y = 0.17
+define_override = forbidden
+define_size = 48, no-drop.svg, 17

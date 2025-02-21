@@ -11,16 +11,16 @@ else
   mkdir -p $DEST_DIR
 fi
 
-if [ -d "$DEST_DIR/Vimix-cursors" ]; then
-  rm -rf "$DEST_DIR/Vimix-cursors"
+if [ -d "$DEST_DIR/Vimix Hyprcursors - Dark" ]; then
+  rm -rf "$DEST_DIR/Vimix Hyprcursors - Dark"
 fi
 
-if [ -d "$DEST_DIR/Vimix-white-cursors" ]; then
-  rm -rf "$DEST_DIR/Vimix-white-cursors"
+if [ -d "$DEST_DIR/Vimix Hyprcursors - Light" ]; then
+  rm -rf "$DEST_DIR/Vimix Hyprcursors - Light"
 fi
 
-cp -r dist/ $DEST_DIR/Vimix-cursors
-cp -r dist-white/ $DEST_DIR/Vimix-white-cursors
+cp -r "hyprcursor/theme_Vimix Hyprcursors - Dark/" "$DEST_DIR/Vimix Hyprcursors - Dark"
+cp -r "hyprcursor/theme_Vimix Hyprcursors - Light/" "$DEST_DIR/Vimix Hyprcursors - Light"
 
 echo "Finished..."
 
