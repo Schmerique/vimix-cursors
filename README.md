@@ -1,61 +1,58 @@
-# Vimix cursors (Hyprcursor)
-This is a Hyprcursor port of the Vimix cursors theme inspired by Materia design and based on [capitaine-cursors](https://github.com/keeferrourke/capitaine-cursors). (WIP)
+# Vimix Hyprcursors
+This is a Hyprcursor port of the Vimix cursors theme inspired by Materia design and based on [capitaine-cursors](https://github.com/keeferrourke/capitaine-cursors).
 
 ## Installation
-To install the cursor theme simply copy the compiled theme to your icons
-directory. For local user installation:
+Copy the extracted release to your icons directory.
 
+For local installation (recommended):
 ```
-./install.sh
+~/.local/share/icons
 ```
-
-For system-wide installation for all users:
-
+For system-wide installation:
 ```
-sudo ./install.sh
+/usr/share/icons
 ```
-
-Then set the theme with your preferred desktop tools.
-
-### Windows
-
-The Windows build comes with an INF file to make installation easy.
-
- 1. Open `.windows/` folder in Explorer, and right click on `install.inf`.
- 1. Click 'Install' from the context menu, and authorise the modifications to your system.
- 1. Press the `Windows Key and R` at the same time and type `main.cpl` in the run promt and press `Ok`.
- 1. Go to `Pointers` and select `Vimix Cursors` under the Scheme category.
- 1. Click 'Apply'.
-
+Then set the theme. For Vimix Hyprcursors - Dark:
+```
+hyprctl setcursor "Vimix Hyprcursors - Dark" 32
+```
+For Vimix Hyprcursors - Light:
+```
+hyprctl setcursor "Vimix Hyprcursors - Light" 32
+```
 ## Building from source
 You'll find everything you need to build and modify this cursor set in
-the `src/` directory. To build the xcursor theme from the SVG source
+the `src/` directory. To build the hyprcursor theme from the SVG source
 run:
 
 ```
 ./build.sh
 ```
 
-This will generate the pixmaps and appropriate aliases.
-The freshly compiled cursor theme will be located in `dist/`
+The freshly compiled cursor theme will be located in `build/`
+When built from source, the install script can be used. For local installation:
 
-### Building depends requirement
-- xorg-xcursorgen.
-- python-cairosvg.
+```
+./install.sh
+```
+For system-wide installation:
+```
+sudo ./install.sh
+```
 
-Fedora/RedHat distros:
+### Build dependencies
+- `python3`
+- `xorg-xcursorgen`
+- `python-cairosvg`
+- `hyprcursor-util`
+- `xcur2png`
 
-    dnf install xorg-xcursorgen python-cairosvg
+#### ArchLinux/Manjaro:
+`build.sh` will try to install these dependencies if they are not available. Alternatively run:
 
-Ubuntu/Mint/Debian distros:
+    pacman -S python3 xorg-xcursorgen python-cairosvg hyprcursor xcur2png
 
-    sudo apt-get install xorg-xcursorgen python-cairosvg
-
-ArchLinux/Manjaro:
-
-    pacman -S xorg-xcursorgen python-cairosvg
-
-Other:
+#### Other:
 Search for the engines in your distributions repository or install the depends from source.
 
 ## Preview

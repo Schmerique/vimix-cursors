@@ -6,3 +6,5 @@ src/x2
 .vscode/
 
 build/
+
+src/x*
