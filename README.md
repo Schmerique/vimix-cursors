@@ -1,7 +1,7 @@
-# Vimix cursors
+# Vimix cursors (Ported to Hyprcursor and KDE's scalable cursors)
 This is a cursor theme inspired by Materia design and based on [capitaine-cursors](https://github.com/keeferrourke/capitaine-cursors).
 
-It contains branches for hyprcursors as well as KDE's scalable cursors. For instructions see the README file of the respective branch.
+This fork contains branches for Hyprcursors as well as KDE's scalable cursors. For instructions see the README file of the respective branch.
 
 ## Installation
 To install the cursor theme simply copy the compiled theme to your icons
