@@ -1,18 +1,19 @@
 # Vimix cursors
-This is an x-cursor theme inspired by Materia design and
-based on [capitaine-cursors](https://github.com/keeferrourke/capitaine-cursors).
+This is a cursor theme inspired by Materia design and based on [capitaine-cursors](https://github.com/keeferrourke/capitaine-cursors).
+
+It contains branches for hyprcursors as well as KDE's scalable cursors. For instructions see the README file of the respective branch.
 
 ## Installation
 To install the cursor theme simply copy the compiled theme to your icons
 directory. For local user installation:
 
-```
+```bash
 ./install.sh
 ```
 
 For system-wide installation for all users:
 
-```
+```bash
 sudo ./install.sh
 ```
 
@@ -33,7 +34,7 @@ You'll find everything you need to build and modify this cursor set in
 the `src/` directory. To build the xcursor theme from the SVG source
 run:
 
-```
+```bash
 ./build.sh
 ```
 
