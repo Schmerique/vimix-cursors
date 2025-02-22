@@ -5,6 +5,21 @@ has_command() {
   "$1" -v $1 > /dev/null 2>&1
 }
 
+if [ ! "$(which python3 2> /dev/null)" ]; then
+  echo python3 needs to be installed to generate the scalable cursors.
+  if has_command zypper; then
+    sudo zypper in python3
+  elif has_command apt; then
+    sudo apt install python3
+  elif has_command dnf; then
+    sudo dnf install -y python3
+  elif has_command dnf; then
+    sudo dnf install python3
+  elif has_command pacman; then
+    sudo pacman -S --noconfirm python3
+  fi
+fi
+
 if [ ! "$(which xcursorgen 2> /dev/null)" ]; then
   echo xorg-xcursorgen needs to be installed to generate the cursors.
   if has_command zypper; then
@@ -38,7 +53,11 @@ fi
 function create {
 	cd "$SRC"
 	mkdir -p x1 x1_25 x1_5 x2
-	cd "$SRC"/$1
+	if [[ $THEME == *"Light"* ]]; then
+		INPUT="$SRC"/svg-light
+	else INPUT="$SRC"/svg-dark
+	fi
+	cd "$INPUT"
 	find . -name "*.svg" -type f -exec sh -c 'echo -e "generating ${0%.svg}.png 32" && cairosvg -f png -o "../x1/${0%.svg}.png" --output-width 32 --output-height 32 $0' {} \;
 	find . -name "*.svg" -type f -exec sh -c 'echo -e "generating ${0%.svg}.png 40" && cairosvg -f png -o "../x1_25/${0%.svg}.png" --output-width 40 --output-height 40 $0' {} \;
 	find . -name "*.svg" -type f -exec sh -c 'echo -e "generating ${0%.svg}.png 48" && cairosvg -f png -o "../x1_5/${0%.svg}.png" --output-width 48 --output-height 48 $0' {} \;
@@ -47,19 +66,16 @@ function create {
 	cd $SRC
 
 	# generate cursors
-	if [[ "$THEME" =~ White$ ]]; then
-		BUILD="$SRC"/../dist-white
-	else BUILD="$SRC"/../dist
+	if [[ $THEME == *"Light"* ]]; then
+		BUILD="$SRC"/../dist-light
+	else BUILD="$SRC"/../dist-dark
 	fi
 
 	OUTPUT="$BUILD"/cursors
 	ALIASES="$SRC"/cursorList
 
-	if [ ! -d "$BUILD" ]; then
-		mkdir "$BUILD"
-	fi
 	if [ ! -d "$OUTPUT" ]; then
-		mkdir "$OUTPUT"
+		mkdir -p "$OUTPUT"
 	fi
 
 	echo -ne "Generating cursor theme...\\r"
@@ -100,10 +116,15 @@ function create {
 
 # generate pixmaps from svg source
 SRC=$PWD/src
-THEME="Vimix Cursors"
+THEME="Vimix Cursors - Dark (Scalable)"
 
-create svg
+create
 
-THEME="Vimix Cursors - White"
+THEME="Vimix Cursors - Light (Scalable)"
 
-create svg-white
+create
+
+cd ../..
+
+python3 add_scalable_cursors.py -o dist-dark -s svg-dark
+python3 add_scalable_cursors.py -o dist-light -s svg-light

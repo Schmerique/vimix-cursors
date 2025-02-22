@@ -1,64 +1,62 @@
-# Vimix cursors
-This is an x-cursor theme inspired by Materia design and
-based on [capitaine-cursors](https://github.com/keeferrourke/capitaine-cursors).
+# Vimix Cursors (Scalable)
+
+This is a cursor theme inspired by Materia design and based on [capitaine-cursors](https://github.com/keeferrourke/capitaine-cursors), adapted to work with KDE's scalable cursors, supported since Plasma 6.2.
 
 ## Installation
-To install the cursor theme simply copy the compiled theme to your icons
-directory. For local user installation:
 
-```
-./install.sh
+### Prebuilt release
+
+Download the latest release package and extract it to your preferred icons directory.
+
+For local installation that is:
+
+```bash
+~/.local/share/icons/
 ```
 
-For system-wide installation for all users:
+For system-wide installation:
 
-```
-sudo ./install.sh
+```bash
+/usr/share/icons/
 ```
 
 Then set the theme with your preferred desktop tools.
 
-### Windows
+### Installing from source
 
-The Windows build comes with an INF file to make installation easy.
+#### Requirements
 
- 1. Open `.windows/` folder in Explorer, and right click on `install.inf`.
- 1. Click 'Install' from the context menu, and authorise the modifications to your system.
- 1. Press the `Windows Key and R` at the same time and type `main.cpl` in the run promt and press `Ok`.
- 1. Go to `Pointers` and select `Vimix Cursors` under the Scheme category.
- 1. Click 'Apply'.
+- `python3`
+- `python-cairosvg`
+- `xorg-xcursorgen`
 
-## Building from source
-You'll find everything you need to build and modify this cursor set in
-the `src/` directory. To build the xcursor theme from the SVG source
-run:
+The `build.sh` script will try install the dependencies if they aren't available. If that doesn't work, install them manually through your distributions package manager.
 
-```
+#### Build process
+
+Run
+
+```bash
 ./build.sh
 ```
 
-This will generate the pixmaps and appropriate aliases.
-The freshly compiled cursor theme will be located in `dist/`
+This will build both the dark and light theme.
 
-### Building depends requirement
-- xorg-xcursorgen.
-- python-cairosvg.
+To install the built themes locally (in `~/.local/share/icons/`) run:
 
-Fedora/RedHat distros:
+```bash
+./install.sh
+```
 
-    dnf install xorg-xcursorgen python-cairosvg
+For a system-wide installation (in `/usr/share/icons/`) run it as root, e.g. with `sudo`:
 
-Ubuntu/Mint/Debian distros:
-
-    sudo apt-get install xorg-xcursorgen python-cairosvg
-
-ArchLinux/Manjaro:
-
-    pacman -S xorg-xcursorgen python-cairosvg
-
-Other:
-Search for the engines in your distributions repository or install the depends from source.
+```bash
+sudo ./install.sh
+```
 
 ## Preview
-![Vimix](preview.png)
-![Vimix-white](preview-white.png)
+
+<p align="center">
+    <img src="preview.png" width="45%" alt="Vimix Cursors - Dark preview on a light and dark background"/>
+    <img src="preview-white.png" width="45%" alt="Vimix Cursors - Light preview on a light and dark background"/>
+</p>
