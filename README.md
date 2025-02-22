@@ -6,7 +6,7 @@ This is a cursor theme inspired by Materia design and based on [capitaine-cursor
 
 ### Prebuilt release
 
-Download the latest release package and extract it to your preferred icons directory.
+Download the latest vimix-cursors-scalable release and extract it to your preferred icons directory.
 
 For local installation that is:
 
