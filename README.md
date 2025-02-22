@@ -2,7 +2,7 @@
 This is a Hyprcursor port of the Vimix cursors theme inspired by Materia design and based on [capitaine-cursors](https://github.com/keeferrourke/capitaine-cursors).
 
 ## Installation
-Copy the extracted release to your icons directory.
+Download the latest vimix-hyprcursors release and extract it to your icons directory.
 
 For local installation (recommended):
 ```
